@@ -1,0 +1,27 @@
+{
+  "assessment": [
+    { "domain": "FH", "code": "FH-1.1.1.1", "term": "Energy intake, total" },
+    { "domain": "AD", "code": "AD-1.1.2", "term": "Weight" },
+    { "domain": "AD", "code": "AD-1.1.5", "term": "Body mass index" },
+    { "domain": "BD", "code": "BD-1.5.1", "term": "Glucose, casual" },
+    { "domain": "PD", "code": "PD-1.1.1", "term": "Overall appearance" }
+  ],
+  "diagnosis": [
+    { "code": "NI-2.1", "term": "Inadequate oral intake" },
+    { "code": "NI-5.1", "term": "Increased nutrient needs" },
+    { "code": "NC-2.2", "term": "Altered nutrition-related laboratory values" },
+    { "code": "NC-3.3", "term": "Overweight/obesity" },
+    { "code": "NB-1.1", "term": "Food- and nutrition-related knowledge deficit" }
+  ],
+  "intervention": [
+    { "domain": "ND", "code": "ND-1.1", "term": "Meal" },
+    { "domain": "E", "code": "E-1.1", "term": "Nutrition education: purpose" },
+    { "domain": "C", "code": "C-1.1", "term": "Theoretical basis/approach" },
+    { "domain": "RC", "code": "RC-1.1", "term": "Coordination of other care during nutrition care" }
+  ],
+  "monitoring": [
+    { "code": "AD-1.1.2", "indicator": "Weight" },
+    { "code": "BD-1.5.1", "indicator": "Glucose, casual" },
+    { "code": "FH-1.1.1.1", "indicator": "Energy intake, total" }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "eNCPT Clinical Note",
+  "type": "object",
+  "required": ["patient", "assessment", "diagnosis", "intervention", "monitoring"],
+  "properties": {
+    "patient": {
+      "type": "object",
+      "required": ["id", "name", "age"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "age": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "assessment": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["domain", "code", "term", "value"],
+        "properties": {
+          "domain": { "enum": ["FH", "AD", "BD", "PD", "CH"] },
+          "code": { "type": "string", "pattern": "^[A-Z]{2}-\\d+(\\.\\d+)*$" },
+          "term": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    },
+    "diagnosis": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["problem", "etiology", "signsSymptoms"],
+        "properties": {
+          "problem": {
+            "type": "object",
+            "required": ["code", "term"],
+            "properties": { "code": { "type": "string" }, "term": { "type": "string" } }
+          },
+          "etiology": { "type": "string" },
+          "signsSymptoms": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+        }
+      }
+    },
+    "intervention": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["domain", "code", "term", "details"],
+        "properties": {
+          "domain": { "enum": ["ND", "E", "C", "RC"] },
+          "code": { "type": "string" },
+          "term": { "type": "string" },
+          "details": { "type": "string" }
+        }
+      }
+    },
+    "monitoring": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["code", "indicator", "criteria"],
+        "properties": {
+          "code": { "type": "string" },
+          "indicator": { "type": "string" },
+          "criteria": { "type": "string" }
+        }
+      }
+    }
+  }
+}
